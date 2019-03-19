@@ -1,0 +1,7 @@
+#ignore workspace file from Intellij
+.idea/
+.iml
+#ignore kafkaShowcase... .iml
+kafkaShowcaseTruckDataSimulation.iml
+#ignore target folder
+target/
