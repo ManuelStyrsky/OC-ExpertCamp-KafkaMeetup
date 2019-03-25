@@ -1,0 +1,31 @@
+Anleitung zur Installation von Kafka auf Linux System
+
+Voraussetzung: Java 8 ist installiert 
+Um dies zu testen java -version in die Command Line eingeben
+Das Terminal wird anschließend die Version von Java ausgeben, sofern es installiet ist. Falls sie nicht installiert ist, kann sie mit folgenden Befehl installiert werden:
+sudo apt install openjdk-8-jdk
+
+Anschließend: Herunterladen von Kafka von der Webseite
+http://mirror.checkdomain.de/apache/kafka/2.1.1/kafka_2.12-2.1.1.tgz (Aktuellste Version)
+
+Nachdem das Paket heruntergeladen wurde, musst du es entpacken
+Danach sollte es einen Ordner geben, der "kafka_2.12-2.1.1" heißt. 
+Falls nach einmaligen entpacken ein Ordner vorhanden ist, der mit .tar endet, so musst du diesen nochmals entpacken
+Diesen Ordner ladest du komplett zu deiner EC2 Instanz hoch. 
+
+Nachdem du den Ordner hochgeladen hast, musst du noch in dem Ordner einen weiteren Ordner namens data erstellen.
+Anschließend navigierst du in den data Ornder und erstellst dort einen weiteren mit dem Namen zookeeper.
+Danach musst du die zookeeper.properties anpassen. Diese liegen in dem config Ordner. 
+Dort änderst du die Zeile dataDir= "Dein Path zu dem neu erstellten zookeepr Ordner".
+Jetzt hast du den Zookeeper soweit konfiguriert, dass du ihn starten kannst.
+
+Die zweite Komponente, der Kafka Server, benötigt ebenfalls einen weiteren Ordner in data. Dieser heißt kafka.
+Damit der Kafka Server ebenfalls funktioniert, musst du nun in config/server.properties, 
+relativ weit unten in dem File, die Zeile log.dirs = "Dein Path zu dem neuerstellten kafka Ordner" anpassen.
+
+Nun bist du eigentlich mit der Installation von Kafka fertig und kannst es testen!
+
+Viel Spaß beim Hacken ;-)
+
+
+
